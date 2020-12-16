@@ -13,7 +13,7 @@ class Composer ():
         self.separator = "-"
 
     # Create a dictionary with the consonance notes groups per each element in the octave
-    # return none
+    # return none info
     # set a dictionary with key the element in the octave and value of the consonance notes per note
     def process_consonance_groups (self) :
         # Create a dictionary with consocance notes: 

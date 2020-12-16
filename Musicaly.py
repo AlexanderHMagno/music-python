@@ -3,7 +3,7 @@ import numpy as np
 from Composer import Composer
 import random
 
-
+# Create songs from scratch
 class Musically ():
 
     def __init__ (self, notes ='', chords = '', speed = 0.5):
