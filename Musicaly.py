@@ -65,7 +65,7 @@ class Musically ():
         print('notes:' + self.notes)
 
     def autorized_name (self, name):
-        return "songs/"+ name.replace(" ", "_") +  '.wav'
+        return "./songs/"+ name.replace(" ", "_") +  '.wav'
 
 
 
