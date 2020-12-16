@@ -44,16 +44,17 @@ player.createSong('maryhad a little lamb', 1)
 
 # How To use Composer
 
-1. You can use Composer as as melody creator where a complete song can be create it automatically
+1. You can use Composer as as melody creator where a complete song can be created  automatically.
+
 example 
 
 ```
 composition1 = Composer()
 composition1.create_melody(100)
-print(composition1.compose()
+print(composition1.compose())
 ```
 
-This will return a composition of 100 notes notes of random grade, if you wish to obtain only composition with 1 grade, pass the integer 1 as second param
+This will return a composition of 100 notes of random grade, if you wish to obtain only composition with 1 grade, pass the integer 1 as second param
 
 2. Composer also can create individual compositions 
 
@@ -70,7 +71,7 @@ example
 
 ```
 
-# General Example can be found on main.py
+# General Example of how to use both classes can be found on main.py
 
 ```
 
