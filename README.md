@@ -37,10 +37,74 @@ This will create a wav file for you
 
 Example:
 
-- player = Musically(chords = 'E-D-C-D-E-E-E-D-D-D-E-G-G-E-D-C-D-E-E-E-E-D-D-E-D-C')
-- player.createSong('maryhad a little lamb', 1)
+```
+player = Musically(chords = 'E-D-C-D-E-E-E-D-D-D-E-G-G-E-D-C-D-E-E-E-E-D-D-E-D-C')
+player.createSong('maryhad a little lamb', 1)
+```
 
+# How To use Composer
 
+1. You can use Composer as as melody creator where a complete song can be create it automatically
+example 
+
+```
+composition1 = Composer()
+composition1.create_melody(100)
+print(composition1.compose()
+```
+
+This will return a composition of 100 notes notes of random grade, if you wish to obtain only composition with 1 grade, pass the integer 1 as second param
+
+2. Composer also can create individual compositions 
+
+example 
+
+```
+    Director = Composer()
+    starting = Director.create_individual_melody(5,1) #will return 5 notes of grade 1
+    notes1 = Director.create_individual_melody(3,1) #will return 3 notes of grade 1
+    notes2 = Director.create_individual_melody(3,3) #will return 3 notes of grade 3
+    notes3 = Director.create_individual_melody(5,2) #will return 5 notes of grade 2
+    notes4 = Director.create_individual_melody(2,1) #will return 2 notes of grade 1
+    FrustaNotata = Director.create_individual_melody(10,3) #will return 10 notes of grade 3
+
+```
+
+# General Example can be found on main.py
+
+```
+
+    #create notes
+    Director = Composer()
+    starting = Director.create_individual_melody(5,1)
+    notes1 = Director.create_individual_melody(3,1)
+    notes2 = Director.create_individual_melody(3,3)
+    notes3 = Director.create_individual_melody(5,2)
+    notes4 = Director.create_individual_melody(2,1)
+    FrustaNotata = Director.create_individual_melody(10,3)
+    
+
+    player = Musically(chords = starting, speed = 0)
+    player.base_freq = 100
+    player.update_last_rate = 1.8
+
+    #introduction
+    player.append_rythm_peace(notes2, repeat= 3, speed = 1,  reversed= False)
+    player.append_rythm_peace(notes4, repeat= 3, speed = 1,  reversed= False)
+    
+    # Principal
+    player.append_rythm_peace(notes3, repeat= 6, speed = 0.5,  reversed= False)
+    player.append_rythm_peace(notes1, repeat= 1, speed = 1)
+    player.append_rythm_peace(notes3, repeat= 6, speed = 0.5,  reversed= False)
+
+    ## Resonata-fenale
+    player.append_rythm_peace(FrustaNotata, repeat= 1, speed = 1,  reversed= False)
+
+    #play-Song
+    player.create_song('mistery', 3)
+    player.view()
+
+```
 
 
 This project was creating following the ideas found on the following paper
